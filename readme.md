@@ -2,7 +2,6 @@
 
 Em construção.
 
-
 - [x] Botão próximo vídeo
 - [x] Botão vídeo anterior
 - [x] Botão play/pause
