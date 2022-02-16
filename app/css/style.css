@@ -1,0 +1,56 @@
+body {
+  background: url('/assets/images/BG.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.container {
+  position: relative;
+  width: 640px;
+  height: 360px;
+  margin: auto;
+  top: 20vh;
+  box-shadow: 3px 3px 5px rgba(8, 1, 43, 0.596);
+}
+.video {
+  width: 100%;
+}
+#info {
+  position: absolute;
+  top: 0;
+  margin: auto;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 10px;
+  background-color: rgba(54, 53, 53, 0.644);
+  width: 100%;
+}
+#title {
+  margin: 0;
+}
+.controle {
+  position: absolute;
+  top: 0;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+.btn {
+  position: relative;
+  top: 100%;
+  transform: translateY(-100%);
+  border: none;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.5);
+}
+.btn:hover {
+  color: rgba(255, 255, 255, 0.973);
+}
+.display-none {
+  display: none;
+}
+@media (max-width: 1280px) {
+  body {
+    background-size: 220vh;
+  }
+}
