@@ -2,7 +2,6 @@
 
 Em construção.
 
-Implementações até agora:
 
 - [x] Botão próximo vídeo
 - [x] Botão vídeo anterior
@@ -12,11 +11,8 @@ Implementações até agora:
 - [x] Adiantar vídeo
 - [x] Retroceder vídeo
 - [x] Pronto para desktop
-
-A implementar:
-
 - [ ] Controle de volume
 - [ ] Versão mobile
 - [ ] Barra de progresso
 
-<a href=“https://m0nicavaz.github.io/VideoPlayer“>Veja em funcionamento</a>
+[Veja em funcionamento](https://m0nicavaz.github.io/VideoPlayer)
