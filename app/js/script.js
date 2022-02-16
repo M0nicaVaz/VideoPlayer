@@ -9,15 +9,87 @@ let video = document.querySelector('#video1');
 let container = document.querySelector('.container');
 let controle = document.querySelector('.controle');
 let title = document.querySelector('#title');
+let homeBtn = document.querySelector('#homeBtn');
+let index = 0;
+
+const videos = [
+  {
+    anime: 'Kimetsu no Yaiba',
+    src: 'assets/videos/Kimetsu.mp4',
+    title: 'Gurenge',
+    author: 'LiSA',
+    background: 'linear-gradient(145deg, #6F3A4E, #43B086, #05173D)',
+  },
+  {
+    anime: 'Fruits Basket',
+    src: 'assets/videos/Furuba.mp4',
+    title: 'Home',
+    author: 'Toki Asano',
+    background: 'linear-gradient(145deg, #6A8899, #8D9484, #224D0C)',
+  },
+  {
+    anime: 'Jujutsu Kaisen',
+    src: 'assets/videos/Jujutsu.mp4',
+    title: 'Kaikai Kitan',
+    author: 'Eve',
+    background: 'linear-gradient(145deg, #798183, #80695B, #051218)',
+  },
+  {
+    anime: 'Rascal Does Not Dream of Bunny Girl Senpai',
+    src: 'assets/videos/Bunny Girl.mp4',
+    title: 'Kiminosei',
+    author: 'The Peggies',
+    background: 'linear-gradient(145deg, #B6F0FE,#A1A5A4, #767B7E)',
+  },
+  {
+    anime: 'Naruto',
+    src: 'assets/videos/Naruto.mp4',
+    title: 'Haruka Kanata',
+    author: 'Asian Kung-Fu Generation',
+    background: 'linear-gradient(145deg, #024DB0, #EDE84D)',
+  },
+  {
+    anime: 'Shingeki no Kyojin',
+    src: 'assets/videos/Shingeki.mp4',
+    title: 'Guren no Yumiya',
+    author: 'Linked Horizon',
+    background: 'linear-gradient(145deg, #E7E6D4, #EFD4A7, #F4955D)',
+  },
+];
+
+video.src = videos[index].src;
+
+homeBtn.addEventListener('click', () => {
+  container.classList.remove('display-none');
+  document.querySelector('#homeScreen').classList.add('display-none');
+  changeBG();
+});
+
+function nextSong() {
+  index++;
+  if (index >= videos.length) {
+    index = 0;
+  }
+  video.src = videos[index].src;
+  video.play();
+  showInfo();
+  changeBG();
+}
+
+video.addEventListener('ended', nextSong);
+
+next.addEventListener('click', nextSong);
 
 fastR.addEventListener('click', () => {
   video.currentTime -= 10;
 });
 
 previous.addEventListener('click', () => {
-  for (i = 0; i < videos.length; i--) {
-    video.src = videos[i].src;
-  }
+  index--;
+  video.src = videos[index].src;
+  video.play();
+  showInfo();
+  changeBG();
 });
 
 play.addEventListener('click', () => {
@@ -29,14 +101,11 @@ play.addEventListener('click', () => {
     play.innerHTML =
       "<i id='play' class='material-icons pause'>play_circle</i>";
   }
+  changeBG();
 });
 
 fastF.addEventListener('click', () => {
   video.currentTime += 10;
-});
-
-next.addEventListener('click', () => {
-  video.play();
 });
 
 replay.addEventListener('click', () => {
@@ -61,44 +130,15 @@ container.addEventListener('mouseleave', () => {
 });
 
 function showInfo() {
-  title.innerHTML = video.anime + '<br>' + video.title + ' - ' + video.author;
+  title.innerHTML =
+    videos[index].anime +
+    '<br>' +
+    videos[index].title +
+    ' - ' +
+    videos[index].author;
 }
 
-let videos = [
-  {
-    anime: 'Kimetsu no Yaiba',
-    src: './videos/Demon Slayer.mp4',
-    title: 'Gurenge',
-    author: 'LiSA',
-  },
-  {
-    anime: 'Fruits Basket',
-    src: './videos/Furuba.mp4',
-    title: 'Home',
-    author: 'Toki Asano',
-  },
-  {
-    anime: 'Jujutsu Kaisen',
-    src: './videos/Jujutsu.mp4',
-    title: 'Kaikai Kitan',
-    author: 'Eve',
-  },
-  {
-    anime: 'Bunny Girl',
-    src: './videos/Bunny Girl.mp4',
-    title: 'Kiminosei',
-    author: 'The Peggies',
-  },
-  {
-    anime: 'Naruto',
-    src: './videos/Naruto.mp4',
-    title: 'Haruka Kanata',
-    author: 'Asian Kung-Fu Generation',
-  },
-  {
-    anime: 'Shingeki no Kyojin',
-    src: './videos/Shingeki.mp4',
-    title: 'Shinzou wo Sasageyo',
-    author: 'Linked Horizon',
-  },
-];
+function changeBG() {
+  document.body.style.background = videos[index].background;
+  document.body.style.backgroundAttachment = 'fixed';
+}

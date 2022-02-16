@@ -1,18 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=video, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="../app/css/style.css" />
+    <title>Anime Openings</title>
+    <link rel="stylesheet" href="/app/css/style.css" />
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
   </head>
-  <body>
-    <div class="container">
+  <body class="bg-properties">
+    <div class="beforeAfter" id="homeScreen">
+      <h1>as melhores aberturas de anime</h1>
+      <button class="mainBtn" id="homeBtn">GO!</button>
+    </div>
+
+    <div class="container display-none">
       <video id="video1" class="video"></video>
 
       <div id="info">
@@ -44,6 +49,6 @@
       </div>
     </div>
 
-    <script src="../app/js/script.js"></script>
+    <script src="/app/js/script.js"></script>
   </body>
 </html>
