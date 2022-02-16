@@ -45,8 +45,8 @@ const videos = [
   {
     anime: 'Naruto',
     src: 'assets/videos/Naruto.mp4',
-    title: 'Haruka Kanata',
-    author: 'Asian Kung-Fu Generation',
+    title: 'Blue Bird',
+    author: 'Ikimono-gakari',
     background: 'linear-gradient(145deg, #024DB0, #EDE84D)',
   },
   {
