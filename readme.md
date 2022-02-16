@@ -18,3 +18,5 @@ A implementar:
 - [ ] Controle de volume
 - [ ] Versão mobile
 - [ ] Barra de progresso
+
+<a href=“https://m0nicavaz.github.io/VideoPlayer“>Veja em funcionamento</a>
