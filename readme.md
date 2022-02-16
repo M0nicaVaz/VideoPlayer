@@ -15,6 +15,6 @@ Implementações até agora:
 
 A implementar:
 
-- [] Controle de volume
-- [] Versão mobile
-- [] Barra de progresso
+- [ ] Controle de volume
+- [ ] Versão mobile
+- [ ] Barra de progresso
