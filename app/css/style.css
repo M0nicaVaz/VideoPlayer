@@ -44,7 +44,7 @@ input[type='text'] {
   height: 360px;
   margin: auto;
   top: 20vh;
-  box-shadow: 3px 3px 5px rgba(8, 1, 43, 0.596);
+  box-shadow: 5px 5px 8px rgba(8, 1, 43, 0.596);
 }
 .video {
   width: 100%;
@@ -72,12 +72,13 @@ input[type='text'] {
 }
 .btn {
   position: relative;
-  top: 100%;
+  top: 90%;
   transform: translateY(-100%);
   border: none;
   background-color: transparent;
   color: rgba(255, 255, 255, 0.5);
   cursor: pointer;
+  transform: scale(1.5);
 }
 .btn:hover {
   color: rgba(255, 255, 255, 0.973);

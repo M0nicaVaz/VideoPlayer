@@ -10,6 +10,7 @@ let container = document.querySelector('.container');
 let controle = document.querySelector('.controle');
 let title = document.querySelector('#title');
 let homeBtn = document.querySelector('#homeBtn');
+let fullScreen = document.querySelector('#fullScreen');
 let index = 0;
 
 const videos = [
@@ -108,10 +109,10 @@ fastF.addEventListener('click', () => {
   video.currentTime += 10;
 });
 
-replay.addEventListener('click', () => {
-  video.currentTime = 0;
-  video.play();
-});
+// replay.addEventListener('click', () => {
+//   video.currentTime = 0;
+//   video.play();
+// });
 
 stopBtn.addEventListener('click', () => {
   video.pause();
@@ -142,3 +143,7 @@ function changeBG() {
   document.body.style.background = videos[index].background;
   document.body.style.backgroundAttachment = 'fixed';
 }
+
+fullScreen.addEventListener('click', () => {
+  video.requestFullscreen();
+});
