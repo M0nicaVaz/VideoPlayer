@@ -4,7 +4,7 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-.beforeAfter {
+#homeScreen {
   font-family: Arial, Helvetica, sans-serif;
   color: white;
   font-variant: small-caps;
@@ -14,17 +14,6 @@
   height: 360px;
   margin: auto;
   top: 30vh;
-}
-input[type='text'] {
-  margin: auto;
-  margin-bottom: 15px;
-  width: 50%;
-  padding: 5px;
-  border-radius: 6px;
-  background: inherit;
-  color: white;
-  font-weight: 600;
-  display: block;
 }
 #homeBtn {
   background: inherit;
@@ -63,7 +52,7 @@ input[type='text'] {
 #title {
   margin: 0;
 }
-.controle {
+.controller {
   position: absolute;
   top: 0;
   text-align: center;

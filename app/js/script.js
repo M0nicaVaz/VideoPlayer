@@ -7,7 +7,7 @@ let stopBtn = document.querySelector('#stopBtn');
 let replay = document.querySelector('#replay');
 let video = document.querySelector('#video1');
 let container = document.querySelector('.container');
-let controle = document.querySelector('.controle');
+let controller = document.querySelector('.controller');
 let title = document.querySelector('#title');
 let homeBtn = document.querySelector('#homeBtn');
 let fullScreen = document.querySelector('#fullScreen');
@@ -66,7 +66,7 @@ homeBtn.addEventListener('click', () => {
   changeBG();
 });
 
-function nextSong() {
+function nextVideo() {
   index++;
   if (index >= videos.length) {
     index = 0;
@@ -77,9 +77,9 @@ function nextSong() {
   changeBG();
 }
 
-video.addEventListener('ended', nextSong);
+video.addEventListener('ended', nextVideo);
 
-next.addEventListener('click', nextSong);
+next.addEventListener('click', nextVideo);
 
 fastR.addEventListener('click', () => {
   video.currentTime -= 10;
@@ -109,11 +109,6 @@ fastF.addEventListener('click', () => {
   video.currentTime += 10;
 });
 
-// replay.addEventListener('click', () => {
-//   video.currentTime = 0;
-//   video.play();
-// });
-
 stopBtn.addEventListener('click', () => {
   video.pause();
   video.currentTime = 0;
@@ -121,12 +116,12 @@ stopBtn.addEventListener('click', () => {
 });
 
 container.addEventListener('mouseenter', () => {
-  controle.style.display = 'block';
+  controller.style.opacity = '1';
   showInfo();
 });
 
 container.addEventListener('mouseleave', () => {
-  controle.style.display = 'none';
+  controller.style.opacity = '0';
   title.innerHTML = '';
 });
 
