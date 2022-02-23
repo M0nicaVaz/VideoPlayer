@@ -1,4 +1,7 @@
-video.src = videos[index].src;
+window.addEventListener('load', () => {
+  video.src = videos[index].src;
+  video.load();
+});
 
 function showInfo() {
   title.innerHTML = `${videos[index].anime} <br> ${videos[index].title} - ${videos[index].author} `;
@@ -76,4 +79,38 @@ container.addEventListener('mouseleave', () => {
 
 fullScreen.addEventListener('click', () => {
   video.requestFullscreen();
+});
+
+video.addEventListener('timeupdate', (e) => {
+  let currentTime = e.target.currentTime;
+  let duration = e.target.duration;
+  let progressWidth = (currentTime / duration) * 100;
+  progress.style.width = `${progressWidth}%`;
+  progress.style.backgroundColor = videos[index].progressColor;
+
+  video.addEventListener('loadeddata', () => {
+    let durationSpan = document.querySelector('#duration');
+    let durationMin = Math.floor(video.duration / 60);
+    let durationSec = Math.floor(video.duration % 60);
+
+    if (durationSec < 10) {
+      durationSec = `0${durationSec}`;
+    }
+    durationSpan.innerText = `${durationMin}:${durationSec}`;
+  });
+
+  let currentSpan = document.querySelector('#current');
+  let currentMin = Math.floor(video.currentTime / 60);
+  let currentSec = Math.floor(video.currentTime % 60);
+
+  if (currentSec < 10) {
+    currentSec = `0${currentSec}`;
+  }
+  currentSpan.innerText = `${currentMin}:${currentSec}`;
+});
+
+progressBar.addEventListener('click', (e) => {
+  let val = progressBar.clientWidth;
+  let progressClicked = e.offsetX;
+  video.currentTime = (progressClicked / val) * video.duration;
 });

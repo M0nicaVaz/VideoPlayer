@@ -11,6 +11,8 @@ let controller = document.querySelector('.controller');
 let title = document.querySelector('#title');
 let homeBtn = document.querySelector('#homeBtn');
 let fullScreen = document.querySelector('#fullScreen');
+let progressBar = document.querySelector('#progress-wrapper');
+let progress = document.querySelector('#progress');
 let index = 0;
 
 const videos = [
@@ -20,6 +22,7 @@ const videos = [
     title: 'Gurenge',
     author: 'LiSA',
     background: 'linear-gradient(145deg, #6F3A4E, #43B086, #05173D)',
+    progressColor: '#6F3A4E',
   },
   {
     anime: 'Fruits Basket',
@@ -27,6 +30,7 @@ const videos = [
     title: 'Home',
     author: 'Toki Asano',
     background: 'linear-gradient(145deg, #6A8899, #8D9484, #224D0C)',
+    progressColor: '#6A8899',
   },
   {
     anime: 'Jujutsu Kaisen',
@@ -34,13 +38,15 @@ const videos = [
     title: 'Kaikai Kitan',
     author: 'Eve',
     background: 'linear-gradient(145deg, #798183, #80695B, #051218)',
+    progressColor: '#798183',
   },
   {
     anime: 'Rascal Does Not Dream of Bunny Girl Senpai',
     src: 'assets/videos/Bunny Girl.mp4',
     title: 'Kiminosei',
     author: 'The Peggies',
-    background: 'linear-gradient(145deg, #B6F0FE,#A1A5A4, #767B7E)',
+    background: 'linear-gradient(145deg, #B6F0FE, #A1A5A4, #767B7E)',
+    progressColor: '#B6F0FE',
   },
   {
     anime: 'Naruto',
@@ -48,6 +54,7 @@ const videos = [
     title: 'Blue Bird',
     author: 'Ikimono-gakari',
     background: 'linear-gradient(145deg, #024DB0, #EDE84D)',
+    progressColor: '#EDE84D',
   },
   {
     anime: 'Shingeki no Kyojin',
@@ -55,5 +62,6 @@ const videos = [
     title: 'Guren no Yumiya',
     author: 'Linked Horizon',
     background: 'linear-gradient(145deg, #E7E6D4, #EFD4A7, #F4955D)',
+    progressColor: '#E7E6D4',
   },
 ];
