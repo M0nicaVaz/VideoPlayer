@@ -19,7 +19,6 @@ function nextVideo() {
   }
   video.src = videos[index].src;
   video.play();
-  showInfo();
   changeBG();
 }
 

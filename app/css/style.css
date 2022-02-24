@@ -110,7 +110,22 @@
 .display-none {
   display: none;
 }
-
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  font-size: 12px;
+  color: black;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+a:hover {
+  color: #ffbe8a;
+}
 @media (max-width: 1280px) {
   body {
     background-size: 220vh;
