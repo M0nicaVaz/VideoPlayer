@@ -1,17 +1,6 @@
 # Exemplo de Video Player
+Projeto para testar o desenvolvimento de controles de mídia, assim como barra de progresso!
 
-Em construção.
-
-- [x] Botão próximo vídeo
-- [x] Botão vídeo anterior
-- [x] Botão play/pause
-- [x] Botão stop
-- [x] Modo full screen
-- [x] Adiantar vídeo
-- [x] Retroceder vídeo
-- [x] Pronto para desktop
-- [ ] Controle de volume
-- [ ] Versão mobile
-- [ ] Barra de progresso
+Feito com HTML, CSS E JavaScript
 
 [Veja em funcionamento](https://m0nicavaz.github.io/VideoPlayer)
