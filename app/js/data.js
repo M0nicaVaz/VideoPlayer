@@ -9,6 +9,7 @@ let video = document.querySelector('#video1');
 let container = document.querySelector('.container');
 let controller = document.querySelector('.controller');
 let title = document.querySelector('#title');
+let infoContainer = document.querySelector('#info');
 let homeBtn = document.querySelector('#homeBtn');
 let fullScreen = document.querySelector('#fullScreen');
 let progressBar = document.querySelector('#progress-wrapper');

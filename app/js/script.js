@@ -4,9 +4,16 @@ window.addEventListener('load', () => {
 });
 
 function showInfo() {
+  controller.style.opacity = '1';
+  infoContainer.style.opacity = '1';
   title.innerHTML = `${videos[index].anime} <br> ${videos[index].title} - ${videos[index].author} `;
 }
 
+function hideInfo() {
+  infoContainer.style.opacity = '0';
+  controller.style.opacity = '0';
+  title.innerHTML = '';
+}
 function changeBG() {
   document.body.style.background = videos[index].background;
   document.body.style.backgroundAttachment = 'fixed';
@@ -18,8 +25,13 @@ function nextVideo() {
     index = 0;
   }
   video.src = videos[index].src;
+  play.innerHTML = "<i class='material-icons pause'>pause_circle_filled</i>";
   video.play();
+  showInfo();
   changeBG();
+  setTimeout(() => {
+    hideInfo();
+  }, 10000);
 }
 
 homeBtn.addEventListener('click', () => {
@@ -28,7 +40,16 @@ homeBtn.addEventListener('click', () => {
   changeBG();
 });
 
-video.addEventListener('ended', nextVideo);
+video.addEventListener('ended', () => {
+  nextVideo();
+  setTimeout(() => {
+    hideInfo();
+  }, 10000);
+});
+
+controller.addEventListener('dblclick', () => {
+  video.requestFullscreen();
+});
 
 next.addEventListener('click', nextVideo);
 
@@ -37,6 +58,9 @@ fastR.addEventListener('click', () => {
 });
 
 previous.addEventListener('click', () => {
+  if (index == 0) {
+    index = 6;
+  }
   index--;
   video.src = videos[index].src;
   video.play();
@@ -67,13 +91,11 @@ stopBtn.addEventListener('click', () => {
 });
 
 container.addEventListener('mouseenter', () => {
-  controller.style.opacity = '1';
   showInfo();
 });
 
 container.addEventListener('mouseleave', () => {
-  controller.style.opacity = '0';
-  title.innerHTML = '';
+  hideInfo();
 });
 
 fullScreen.addEventListener('click', () => {
@@ -87,17 +109,6 @@ video.addEventListener('timeupdate', (e) => {
   progress.style.width = `${progressWidth}%`;
   progress.style.backgroundColor = videos[index].progressColor;
 
-  video.addEventListener('loadeddata', () => {
-    let durationSpan = document.querySelector('#duration');
-    let durationMin = Math.floor(video.duration / 60);
-    let durationSec = Math.floor(video.duration % 60);
-
-    if (durationSec < 10) {
-      durationSec = `0${durationSec}`;
-    }
-    durationSpan.innerText = `${durationMin}:${durationSec}`;
-  });
-
   let currentSpan = document.querySelector('#current');
   let currentMin = Math.floor(video.currentTime / 60);
   let currentSec = Math.floor(video.currentTime % 60);
@@ -106,6 +117,17 @@ video.addEventListener('timeupdate', (e) => {
     currentSec = `0${currentSec}`;
   }
   currentSpan.innerText = `${currentMin}:${currentSec}`;
+});
+
+video.addEventListener('loadeddata', () => {
+  let durationSpan = document.querySelector('#duration');
+  let durationMin = Math.floor(video.duration / 60);
+  let durationSec = Math.floor(video.duration % 60);
+
+  if (durationSec < 10) {
+    durationSec = `0${durationSec}`;
+  }
+  durationSpan.innerText = `${durationMin}:${durationSec}`;
 });
 
 progressBar.addEventListener('click', (e) => {

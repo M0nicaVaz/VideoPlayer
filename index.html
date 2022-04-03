@@ -12,8 +12,8 @@
     />
   </head>
 
-  <body class="bg-properties">
-    <div id="homeScreen">
+  <body>
+    <div class="homepage" id="homeScreen">
       <h1>as melhores aberturas de anime</h1>
       <button class="mainBtn" id="homeBtn">GO!</button>
     </div>
@@ -21,47 +21,49 @@
     <div class="container display-none">
       <video id="video1" class="video"></video>
 
-      <div id="info">
-        <h1 id="title"></h1>
+      <div class="info-container" id="info">
+        <h1 class="info-title" id="title"></h1>
       </div>
 
       <div class="controller">
-        <div id="progress-wrapper">
-          <div id="progress"></div>
+        <div class="progressBar-out" id="progress-wrapper">
+          <div class="progressBar-in" id="progress"></div>
         </div>
 
-        <span id="current" class="timers"></span>
-        <span id="duration" class="timers"></span>
+        <span id="current" class="timer-current timers">0:00</span>
+        <span id="duration" class="timer-duration timers"></span>
 
-        <button id="fullScreen" class="btn">
-          <i class="material-icons"> fullscreen </i>
-        </button>
-        <button id="previous" class="btn">
-          <i class="material-icons"> skip_previous </i>
-        </button>
-        <button id="fast-r" class="btn">
-          <i class="material-icons"> fast_rewind </i>
-        </button>
-        <button id="play" class="btn">
-          <i class="material-icons"> play_circle </i>
-        </button>
-        <button id="fast-f" class="btn">
-          <i class="material-icons"> fast_forward </i>
-        </button>
-        <button id="next" class="btn">
-          <i class="material-icons"> skip_next </i>
-        </button>
-        <button id="stopBtn" class="btn">
-          <i class="material-icons"> stop </i>
-        </button>
+        <div class="buttons">
+          <button id="fullScreen" class="btn">
+            <i class="material-icons"> fullscreen </i>
+          </button>
+          <button id="previous" class="btn">
+            <i class="material-icons"> skip_previous </i>
+          </button>
+          <button id="fast-r" class="btn">
+            <i class="material-icons"> fast_rewind </i>
+          </button>
+          <button id="play" class="btn">
+            <i class="material-icons"> play_circle </i>
+          </button>
+          <button id="fast-f" class="btn">
+            <i class="material-icons"> fast_forward </i>
+          </button>
+          <button id="next" class="btn">
+            <i class="material-icons"> skip_next </i>
+          </button>
+          <button id="stopBtn" class="btn">
+            <i class="material-icons"> stop </i>
+          </button>
+        </div>
       </div>
     </div>
 
-    <footer>
+    <footer class="page-footer">
       <p>
         Note from
-        <a href="http://github.com/M0nicaVaz">dev</a>: this page was created for
-        studying purposes only. <br />
+        <a class="footer-link" href="http://github.com/M0nicaVaz">dev</a>: this
+        page was created for studying purposes only. <br />
         I do not own any of these videos. Please do not share.
       </p>
     </footer>

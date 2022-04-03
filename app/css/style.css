@@ -1,56 +1,58 @@
-.bg-properties {
+body {
   background: linear-gradient(145deg, #6300a9, #ffbe8a);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
-#homeScreen {
+.homepage {
   font-family: Arial, Helvetica, sans-serif;
   color: white;
   font-variant: small-caps;
   text-align: center;
   position: relative;
-  width: 640px;
-  height: 360px;
-  margin: auto;
-  top: 30vh;
 }
-#homeBtn {
+.mainBtn {
   background: inherit;
-  padding: 10px;
+  padding: 8px 16px;
   border-radius: 6px;
   font-size: 16px;
   font-weight: 600;
   color: white;
 }
-#homeBtn:hover {
+.mainBtn:hover {
   cursor: pointer;
   color: #ffbe8a;
 }
 .container {
   position: relative;
-  width: 640px;
-  height: 360px;
+  width: 41rem;
+  height: 23rem;
   margin: auto;
-  top: 20vh;
   box-shadow: 5px 5px 8px rgba(8, 1, 43, 0.596);
 }
 .video {
   width: 100%;
 }
-#info {
+.info-container {
   position: absolute;
   top: 0;
+  opacity: 0;
   margin: auto;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
   color: white;
-  font-size: 10px;
+  font-family: monospace;
   background-color: rgba(54, 53, 53, 0.644);
   width: 100%;
 }
-#title {
-  margin: 0;
+.info-title {
+  font-size: 1rem;
 }
 .controller {
   position: absolute;
@@ -59,15 +61,21 @@
   width: 100%;
   height: 100%;
 }
+.buttons {
+  position: absolute;
+  width: 100%;
+  bottom: 5px;
+  left: 0;
+}
 .timers {
   position: absolute;
   top: 85%;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
 }
-#progress-wrapper {
+.progressBar-out {
   position: relative;
-  top: 80%;
+  top: 85%;
   left: 5%;
   border-radius: 20px;
   height: 10px;
@@ -75,21 +83,21 @@
   width: 90%;
   text-align: center;
 }
-#progress {
+.progressBar-in {
   position: absolute;
   border-radius: 20px;
   height: 100%;
 }
 .timers {
-  top: 81%;
+  top: 85%;
   font-size: 14px;
 }
-#current {
+.timer-current {
   position: relative;
   float: left;
   left: 5%;
 }
-#duration {
+.timer-duration {
   position: relative;
   float: right;
   right: 5%;
@@ -110,7 +118,7 @@
 .display-none {
   display: none;
 }
-footer {
+.page-footer {
   position: fixed;
   left: 0;
   bottom: 0;
@@ -119,15 +127,38 @@ footer {
   font-size: 12px;
   color: black;
 }
-a {
+.footer-link {
   color: black;
   text-decoration: none;
 }
-a:hover {
+.footer-link:hover {
   color: #ffbe8a;
 }
-@media (max-width: 1280px) {
-  body {
-    background-size: 220vh;
+@media (max-width: 780px) {
+  .homepage {
+    padding: 0 2rem;
+  }
+  .container {
+    width: 24rem;
+    height: 13rem;
+  }
+  .buttons {
+    margin-top: 2rem;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+  }
+  .info-title {
+    font-size: 0.85rem;
+  }
+  .progressBar-out {
+    position: relative;
+    top: 75%;
+    left: 5%;
+  }
+  .timers {
+    top: 80%;
+    font-size: 14px;
   }
 }
