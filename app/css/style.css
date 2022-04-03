@@ -135,6 +135,11 @@ body {
   color: #ffbe8a;
 }
 @media (max-width: 780px) {
+  body {
+    background-attachment: scroll;
+    height: 100%;
+    width: 100%;
+  }
   .homepage {
     padding: 0 2rem;
   }
