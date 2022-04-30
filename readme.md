@@ -8,7 +8,7 @@ Projeto para testar o desenvolvimento de controles de mídia, assim como barra d
 
 ## Preview
 
-<img src="https://github.com/M0nicaVaz/VideoPlayer/blob/master/assets/images/github/preview.gif?raw=true" width="680px" >
+<img src="https://github.com/M0nicaVaz/VideoPlayer/blob/master/assets/images/preview.gif?raw=true" width="680px" >
 
 ## Feito com:
 
