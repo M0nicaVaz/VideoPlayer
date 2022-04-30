@@ -4,19 +4,18 @@ window.addEventListener('load', () => {
 });
 
 function showInfo() {
-  controller.style.opacity = '1';
-  infoContainer.style.opacity = '1';
+  controller.classList.toggle('hide');
+  infoContainer.classList.toggle('hide');
   title.innerHTML = `${videos[index].anime} <br> ${videos[index].title} - ${videos[index].author} `;
 }
 
 function hideInfo() {
-  infoContainer.style.opacity = '0';
-  controller.style.opacity = '0';
+  controller.classList.add('hide');
+  infoContainer.classList.add('hide');
   title.innerHTML = '';
 }
 function changeBG() {
   document.body.style.background = videos[index].background;
-  document.body.style.backgroundAttachment = 'fixed';
 }
 
 function nextVideo() {
@@ -126,6 +125,7 @@ video.addEventListener('loadeddata', () => {
 
   if (durationSec < 10) {
     durationSec = `0${durationSec}`;
+    durationSec.padStart(4, '0');
   }
   durationSpan.innerText = `${durationMin}:${durationSec}`;
 });
